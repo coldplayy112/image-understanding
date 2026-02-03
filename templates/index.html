@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Insight - Blur & Describe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Insight</h1>
+            <p>Upload an image to check for blur or get a detailed AI description.</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="drop-area">
+                <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+                <label class="button" for="fileElem">Select an Image</label>
+                <p>or drag and drop here</p>
+                <div id="preview-container">
+                    <img id="preview" src="" alt="Image preview">
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <input type="text" id="urlInput" placeholder="Or paste an Image URL">
+                    <button onclick="handleUrl()">Analyze URL</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing...</p>
+            </div>
+
+            <div id="result" class="hidden">
+                <h2>Result</h2>
+                <div id="result-content" class="result-box"></div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
