@@ -112,7 +112,7 @@ function displayResult(data) {
         resultContent.innerText = "Error: " + data.error;
         resultContent.style.borderLeftColor = "#ff4b1f";
     } else if (data.result === "Blur") {
-        resultContent.innerText = "⚠️ BLUR DETECTED\n\n" + (data.details || "");
+        resultContent.innerText = "Blur";
         resultContent.style.borderLeftColor = "#ff4b1f";
     } else {
         resultContent.innerText = "✨ AI DESCRIPTION\n\n" + data.result;
